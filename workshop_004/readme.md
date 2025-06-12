@@ -70,3 +70,5 @@ When you're done, deactivate the virtual environment:
 deactivate
 ```
 This restores your terminal to the global Python environment.
+
+[Previous Workshop](../workshop_003/readme.md) | [Next Workshop](../workshop_005/readme.md)

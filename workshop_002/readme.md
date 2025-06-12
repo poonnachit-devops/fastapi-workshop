@@ -121,4 +121,5 @@ Give it a shot on your next Python project — your future self will thank you!
 
 Happy coding! 🐍💻
 
-
+[Previous Workshop](../workshop_001/readme.md) | [Next Workshop](../workshop_003/readme.md)
+```

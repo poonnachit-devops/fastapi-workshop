@@ -135,3 +135,5 @@ Or use a tool like `curl`, `Postman`, or any HTTP client.
 ---
 
 Happy coding! 🚀  
+
+[Previous Workshop](../workshop_005/readme.md) | [Next Workshop](../workshop_004/readme.md)

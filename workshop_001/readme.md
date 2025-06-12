@@ -55,3 +55,6 @@ Type hints in Python:
 Give them a try in your next project — your future self will thank you!
 
 Happy coding! 🐍💻
+
+[Next Workshop](../workshop_002/readme.md)
+```
