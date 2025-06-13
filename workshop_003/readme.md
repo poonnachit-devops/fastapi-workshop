@@ -13,13 +13,24 @@ We'll start by creating a Pydantic class to validate each expense:
 
 ```python
 from pydantic import BaseModel
+from datetime import datetime
 
 class Expenses(BaseModel):
-    id: str
+    id: int
     description: str
     amount: int
+    created_at: datetime = datetime.now()
+    updated_at: datetime = datetime.now()
 
-expenses: list[Expenses] = []
+class ExpensesDto(BaseModel):
+    id: int
+    description: str
+    amount: int
+    created_at: datetime = datetime.now()
+    updated_at: datetime = datetime.now()
+
+expenses: dict[int,Expenses] = {}
+id = 0
 ```
 
 ---
@@ -63,7 +74,7 @@ expense updated successfully (ID, DESCRIPTION, AMOUNT baht)
 ### Example:
 
 ```python
-update_expense_tracker("1", "Water", 8)
+update_expense_tracker(1, "Water", 8)
 # output: expense updated successfully (1, Water, 8 baht)
 ```
 
@@ -82,7 +93,7 @@ DESCRIPTION has been deleted
 ### Example:
 
 ```python
-delete_expense_tracker("3")
+delete_expense_tracker(3)
 # output: Green tea has been deleted
 ```
 
@@ -129,9 +140,9 @@ add_expense_tracker("Water", 10)
 add_expense_tracker("Coke", 15)
 add_expense_tracker("Green tea", 15)
 
-update_expense_tracker("1", "Water", 8)
+update_expense_tracker(1, "Water", 8)
 
-delete_expense_tracker("3")
+delete_expense_tracker(3)
 
 summary_expense_tracker()
 summary_expense_tracker(6)
