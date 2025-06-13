@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 app = FastAPI()
 
@@ -35,22 +35,22 @@ def create_item(item: ItemDto):
 def read_items():
     return list(items.values())
 
-@app.get("/items/{item_id}", response_model=Item | dict)
+@app.get("/items/{item_id}", response_model=Item)
 def read_item(item_id: int):
     if item_id not in items:
-        return {"error": "Item not found"}
+        raise HTTPException(status_code=404, detail="Item not found")
     return items[item_id]
 
-@app.put("/items/{item_id}", response_model=Item | dict)
+@app.put("/items/{item_id}", response_model=Item)
 def update_item(item_id: int, item: ItemDto):
     if item_id not in items:
-        return {"error": "Item not found"}
+        raise HTTPException(status_code=404, detail="Item not found")
     items[item_id] = Item(item_id=item_id, **item.model_dump())
     return items[item_id]
 
 @app.delete("/items/{item_id}", response_model=dict)
 def delete_item(item_id: int):
     if item_id not in items:
-        return {"error": "Item not found"}
+        raise HTTPException(status_code=404, detail="Item not found")
     del items[item_id]
     return {"message": "Item deleted successfully"}
