@@ -24,12 +24,10 @@ def update_expense_tracker(id: int, description: str, amount: int) -> None:
         print(f"expense with id {id} not found")
         return
     
-    global expenses
     expenses[id] = Expenses(id=id, description=description, amount=amount, updated_at=datetime.now())
     print(f"expense updated successfully ({id}, {description}, {amount} baht)")
 
 def delete_expense_tracker(id: int) -> None:
-    global expenses
     if id not in expenses:
         print(f"expense with id {id} not found")
         return
@@ -38,7 +36,7 @@ def delete_expense_tracker(id: int) -> None:
 def list_expense_tracker() -> None:
     print("ID\tDate\t\tDescription\tAmount")
     for _, expense in expenses.items():
-        print(f"{expense.id}\t{expense.created_at.date()}\t{expense.description}\t{expense.amount} baht")
+        print(f"{expense.id}\t{expense.created_at.date()}\t{expense.description}\t\t{expense.amount} baht")
 
 def summary_expense_tracker(month: int | None = None) -> None:
     if not month:
@@ -66,3 +64,5 @@ delete_expense_tracker(3)
 
 summary_expense_tracker()
 summary_expense_tracker(6)
+
+list_expense_tracker()
