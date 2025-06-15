@@ -8,13 +8,6 @@ class Expenses(BaseModel):
     created_at: datetime = datetime.now()
     updated_at: datetime = datetime.now()
 
-class ExpensesDto(BaseModel):
-    id: int
-    description: str
-    amount: int
-    created_at: datetime = datetime.now()
-    updated_at: datetime = datetime.now()
-
 expenses: dict[int,Expenses] = {}
 id = 0
 
