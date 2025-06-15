@@ -26,7 +26,6 @@ print(greeting("World"))
 Next up, we’ll repeat a string a certain number of times.
 ```python
 def repeat_string(s: str, times: int) -> str:
-    """Repeat a string multiple times."""
     return s * times
 
 print(repeat_string("Hi ", 3))  # Output: Hi Hi Hi 
@@ -39,11 +38,11 @@ print(repeat_string("Hi ", 3))  # Output: Hi Hi Hi
 
 ---
 
-## Step 3: List (List[int])
+## Step 3: List (list[int])
 What if you want to grab the first item from a list of numbers?
 
 ```python
-def get_first_item(items: List[int]) -> int:
+def get_first_item(items: list[int]) -> int:
     return items[0]
 
 print(get_first_item([10, 20, 30]))  # Output: 10
@@ -55,11 +54,11 @@ print(get_first_item([10, 20, 30]))  # Output: 10
 
 ---
 
-## Step 4: Dictionary (Dict[str, str])
+## Step 4: Dictionary (dict[str, str])
 How about getting a capital city from a dictionary?
 
 ```python
-def get_capital(countries: Dict[str, str], country: str) -> str:
+def get_capital(countries: dict[str, str], country: str) -> str:
     return countries[country]
 
 capitals = {"France": "Paris", "Japan": "Tokyo"}
@@ -67,20 +66,20 @@ print(get_capital(capitals, "France"))  # Output: Paris
 ```
 
 ### 🤓 Notes:
-- `Dict[str, str]` means keys are strings (country names), values are strings (capitals).
+- `dict[str, str]` means keys are strings (country names), values are strings (capitals).
 
 ---
 
-## Step 5: Set (Set[int])
+## Step 5: Set (set[int])
 Sets hold unique items. Let’s check for duplicates by comparing a list to its set.
 
 ```python
-def has_duplicates(items: Set[int]) -> bool:
+def has_duplicates(items: set[int]) -> bool:
     return len(items) != len(set(items))
 
 print(has_duplicates([1, 2, 2, 3]))  # Output: True
 ```
-While here we didn’t type hint the set explicitly, you can use `Set[int]` to represent sets of integers.
+While here we didn’t type hint the set explicitly, you can use `set[int]` to represent sets of integers.
 
 ---
 
@@ -88,16 +87,14 @@ While here we didn’t type hint the set explicitly, you can use `Set[int]` to r
 Tuples are fixed-length collections. For example, user info might be a name and age:
 
 ```python
-from typing import Tuple
-
-def get_user_info() -> Tuple[str, int]:
+def get_user_info() -> tuple[str, int]:
     return ("Alice", 30)
 
 name, age = get_user_info()
 print(name)  # Alice
 print(age)   # 30
 ```
-`Tuple[str, int]` means a two-item tuple with a string first and an integer second.
+`tuple[str, int]` means a two-item tuple with a string first and an integer second.
 
 ---
 
@@ -106,10 +103,10 @@ print(age)   # 30
 |-------|------------------|----------------------------------|
 | str   | `name: str`      | A text string                    |
 | int   | `times: int`     | An integer number                |
-| List  | `List[int]`      | A list of integers              |
-| Dict  | `Dict[str, str]` | A dictionary with string keys/values |
-| Set   | `Set[int]`       | A set of unique integers        |
-| Tuple | `Tuple[str, int]`| A fixed-length pair (string, int) |
+| List  | `list[int]`      | A list of integers              |
+| Dict  | `dict[str, str]` | A dictionary with string keys/values |
+| Set   | `set[int]`       | A set of unique integers        |
+| Tuple | `tuple[str, int]`| A fixed-length pair (string, int) |
 
 
 ## Why Use Type Hints?
