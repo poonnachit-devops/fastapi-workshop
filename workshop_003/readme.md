@@ -105,8 +105,8 @@ Create a function to display all expenses in a table format:
 
 ```plaintext
 ID  Date        Description  Amount
-1   2024-08-06  Water        8
-2   2024-08-06  Coke         15
+1   2024-06-06  Water        8
+2   2024-06-06  Coke         15
 ```
 
 ---
@@ -127,8 +127,8 @@ summary_expense_tracker()
 Modify the summary function to optionally accept a month (1-12) and show the total for that month (from the current year):
 
 ```python
-summary_expense_tracker(8)
-# output: Total expenses for August: 23 baht
+summary_expense_tracker(6)
+# output: Total expenses for June: 23 baht
 ```
 
 ---
