@@ -22,23 +22,13 @@ class Expenses(BaseModel):
     created_at: datetime = datetime.now()
     updated_at: datetime = datetime.now()
 
-class ExpensesDto(BaseModel):
-    id: int
-    description: str
-    amount: int
-    created_at: datetime = datetime.now()
-    updated_at: datetime = datetime.now()
-
-
 # Initialize an empty dictionary to store expenses
 # - key is the expense ID, 
 # - value is the Expenses object
-
 expenses: dict[int,Expenses] = {}
 
 # Initialize a global ID counter
 # so we can auto-increment IDs for new expenses
-
 id = 0
 ```
 
