@@ -29,7 +29,16 @@ class ExpensesDto(BaseModel):
     created_at: datetime = datetime.now()
     updated_at: datetime = datetime.now()
 
+
+# Initialize an empty dictionary to store expenses
+# - key is the expense ID, 
+# - value is the Expenses object
+
 expenses: dict[int,Expenses] = {}
+
+# Initialize a global ID counter
+# so we can auto-increment IDs for new expenses
+
 id = 0
 ```
 
@@ -49,6 +58,14 @@ expense added successfully (ID, DESCRIPTION, AMOUNT baht)
 ### Example:
 
 ```python
+def add_expense_tracker(description: str, amount: int) -> None:
+    global id
+    id += 1
+
+    expenses[id] = Expenses(id=id, description=description, amount=amount)
+    
+    print(f"expense added successfully ({id}, {description}, {amount} baht)")
+
 add_expense_tracker("Water", 10)
 # output: expense added successfully (1, Water, 10 baht)
 
