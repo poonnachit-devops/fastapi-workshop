@@ -111,9 +111,9 @@ delete_expense_tracker(3)
 Create a function to display all expenses in a table format:
 
 ```plaintext
-ID  Date        Description  Amount
-1   2024-06-06  Water        8
-2   2024-06-06  Coke         15
+ID      Date            Description     Amount
+1       2025-06-16      Water           8 baht
+2       2025-06-16      Coke            15 baht
 ```
 
 ---
@@ -153,6 +153,8 @@ delete_expense_tracker(3)
 
 summary_expense_tracker()
 summary_expense_tracker(6)
+
+list_expense_tracker()
 ```
 
 ### Sample Output:
@@ -162,9 +164,11 @@ expense added successfully (1, Water, 10 baht)
 expense added successfully (2, Coke, 15 baht)
 expense added successfully (3, Green tea, 15 baht)
 expense updated successfully (1, Water, 8 baht)
-Green tea has been deleted
 Total expenses: 23 baht
 Total expenses for month June: 23 baht
+ID      Date            Description     Amount
+1       2025-06-16      Water           8 baht
+2       2025-06-16      Coke            15 baht
 ```
 
 [Previous Workshop](../workshop_002/readme.md) | [Next Workshop](../workshop_004/readme.md)
