@@ -146,14 +146,6 @@ git config --global user.email "YOUR_EMAIL"
 git config --global user.name "YOUR_USERNAME"
 ```
 These two commands configure your global Git identity — which tells Git who you are when making commits.
-### 📍 Notes:
-The --global flag makes this setting apply to all repos for the current user account.
-
-If you want to set it only for a specific repo, remove --global and run the commands inside the repo:
-```bash
-git config user.email "YOUR_EMAIL"
-git config user.name "YOUR_USERNAME"
-```
 
 ## Connects your local Git repository to a remote repository
 ```bash
