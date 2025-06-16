@@ -38,7 +38,7 @@ source .venv/Scripts/activate
 ```
 💡 On macOS/Linux, the path may be 
 ```bash 
-.venv/bin/activate.
+source .venv/bin/activate
 ```
 
 
