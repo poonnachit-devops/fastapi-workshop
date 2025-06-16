@@ -38,7 +38,7 @@ source .venv/Scripts/activate
 ```
 💡 On macOS/Linux, the path may be 
 ```bash 
-.venv/bin/activate.
+source .venv/bin/activate
 ```
 
 
@@ -125,5 +125,36 @@ Normally you use:
 - Write a path operation decorator using decorators like @app.get("/").
 - Define a path operation function; for example, def root(): ....
 - Run the development server using the command fastapi dev.
+
+---
+# Workshop 5.5 (Git) 
+## Stages all changes (new, modified, or deleted files) in the current directory and all subdirectories
+```bash
+git add .
+```
+It stages all changes in your working directory 
+
+## Creates a new commit
+```bash
+git commit -m “init project”
+```
+It creates a new commit with all currently staged changes and attaches the message "init project" to that commit.
+
+## Configure Git identity
+```bash
+git config --global user.email "YOUR_EMAIL"
+git config --global user.name "YOUR_USERNAME"
+```
+These two commands configure your global Git identity — which tells Git who you are when making commits.
+
+## Connects your local Git repository to a remote repository
+```bash
+git remote add origin YOUR_URL
+```
+## Uploads your local master branch
+It uploads your local master branch commits to the remote repository named origin.
+```bash
+git push origin master
+```
 
 [Previous Workshop](../workshop_004/readme.md) | [Next Workshop](../workshop_006/readme.md)
